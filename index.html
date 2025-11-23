@@ -32,11 +32,44 @@
     <div class="floating-emoji" style="top: 40%; left: 15%;">🦋</div>
 
     <!-- HERO SECTION -->
-    <div class="hero">
-        <h1>Namaste! 🙏</h1>
-        <p>We are from Nepal — a fun, colorful, and beautiful country with tall mountains, brave people, and super yummy momos!</p>
-        <a class="button">Let's Explore Nepal Together! 🌏</a>
-    </div>
+<!-- HERO SECTION WITH REAL MOUNTAINS -->
+<div class="hero-container">
+
+  <!-- Real mountains background -->
+  <div class="mountain-bg"></div>
+
+  <!-- Animated Baby Yak Mascot -->
+  <img src="images/baby-yak.png" class="baby-yak" alt="Baby Yak Mascot">
+
+  <!-- Floating emojis -->
+  <div class="floating-emoji" style="top: 20%; left: 8%;">🎈</div>
+  <div class="floating-emoji" style="top: 55%; left: 15%;">🦋</div>
+  <div class="floating-emoji" style="top: 65%; left: 80%;">🌈</div>
+
+  <!-- HERO TEXT -->
+  <div class="hero-content">
+    <h1>Namaste! 🙏</h1>
+    <p>
+      Welcome to Nepal — a colorful, beautiful country with tall mountains,
+      brave people, and super yummy momos!
+    </p>
+
+    <button class="button">Let's Explore Nepal Together! 🌏</button>
+
+    <!-- Hear Namaste -->
+    <button class="sound-btn" onclick="playNamaste()">🔊 Hear “Namaste!”</button>
+  </div>
+</div>
+
+<!-- Audio -->
+<audio id="namasteAudio" src="audio/namaste.mp3"></audio>
+
+<script>
+  function playNamaste() {
+    document.getElementById("namasteAudio").play();
+  }
+</script>
+
 
 </body>
 </html>
