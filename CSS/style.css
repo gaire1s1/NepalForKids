@@ -107,6 +107,7 @@ nav a:hover {
 }
 
 /* HERO CONTAINER */
+/* HERO CONTAINER */
 .hero-container {
   position: relative;
   width: 100%;
@@ -124,41 +125,11 @@ nav a:hover {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('images/heros/mountain.jpg');
+  background-image: url("images/hero/nepal-mountains.jpg");
   background-size: cover;
   background-position: center;
   filter: brightness(70%) blur(2px);
   z-index: -2;
-}
-
-/* HERO TEXT */
-.hero-content h1 {
-  font-size: 4rem;
-  color: #fff;
-  text-shadow: 3px 3px 12px rgba(0,0,0,0.6);
-}
-
-.hero-content p {
-  color: #fff;
-  font-size: 1.8rem;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-  max-width: 700px;
-  margin: 20px auto;
-}
-
-/* SOUND BUTTON */
-.sound-btn {
-  background: #fff6a9;
-  padding: 10px 20px;
-  border-radius: 15px;
-  font-size: 1.2rem;
-  border: none;
-  margin-top: 10px;
-  cursor: pointer;
-}
-.sound-btn:hover {
-  background: #ffe169;
-  transform: scale(1.1);
 }
 
 /* BABY YAK */
