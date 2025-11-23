@@ -58,7 +58,7 @@ nav a:hover {
 /* HERO SECTION */
 .hero {
     height: 100vh;
-    background-image: url("../images/heros/nepal-mountains.png"); /* FIXED */
+    background-image: url("../images/heros/nepal-mountains.jpg"); /* FIXED */
     background-size: cover;
     background-position: center bottom;
     display: flex;
