@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Nepal Map 🗺️ (Google Maps)</title>
+
+  <!-- Use your global kid-friendly styles -->
+  <link rel="stylesheet" href="../CSS/style.css" />
+
+  <style>
+    /* Extra layout just for this page */
+
+    .map-page-hero {
+      padding: 40px 20px 10px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .map-page-hero h1 {
+      font-size: 40px;
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+      margin-bottom: 10px;
+    }
+
+    .map-page-hero p {
+      font-size: 20px;
+      color: #fdfdfd;
+    }
+
+    /* Map container */
+    #nepalMap {
+      width: 90%;
+      max-width: 900px;
+      height: 500px;
+      margin: 20px auto 30px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border: 4px solid rgba(255,255,255,0.7);
+    }
+
+    /* Info box under the map */
+    .map-info-box {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 15px;
+      padding: 15px 20px;
+      font-size: 1.2rem;
+    }
+
+    .map-info-box strong {
+      font-size: 1.3rem;
+    }
+
+    .marker-list {
+      margin-top: 10px;
+      text-align: left;
+    }
+    .marker-list li {
+      margin: 3px 0;
+    }
+
+    @media (max-width: 600px) {
+      #nepalMap {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION (relative paths because we are in /pages/) -->
+  <nav>
+    <a href="../index.html">🏡 Home</a>
+    <a href="magic-map.html">🗺 Magic Map</a>
+    <a href="nepali-words.html">👋 Nepali Words</a>
+    <a href="nepal-live-map.html">🌍 Live Map</a>
+  </nav>
+
+  <!-- FLOATING EMOJIS (optional) -->
+  <div class="floating-emoji" style="top: 18%; left: 5%;">🎈</div>
+  <div class="floating-emoji" style="top: 70%; left: 85%;">🗻</div>
+
+  <!-- PAGE HERO TEXT -->
+  <div class="map-page-hero">
+    <h1>Live Nepal Map 🌍</h1>
+    <p>
+      Zoom, move, and tap the markers to learn about different places in Nepal!  
+      You can see mountains, cities, and jungle areas on this live map.
+    </p>
+  </div>
+
+  <!-- GOOGLE MAPS CONTAINER -->
+  <div id="nepalMap"></div>
+
+  <!-- EXTRA INFO UNDER MAP -->
+  <div class="map-info-box">
+    <strong>Tip for kids:</strong> Try zooming in and out, and drag the map around Nepal!
+    <ul class="marker-list">
+      <li>🏔 <b>Mount Everest</b> – tallest mountain in the world!</li>
+      <li>🏙 <b>Kathmandu</b> – the capital city of Nepal.</li>
+      <li>🏞 <b>Pokhara</b> – beautiful lakes and mountain views.</li>
+      <li>🦏 <b>Chitwan National Park</b> – jungle with rhinos and elephants.</li>
+    </ul>
+  </div>
+
+  <!-- GOOGLE MAPS SCRIPT -->
+  <script>
+    let map;
+
+    function initMap() {
+      // Center the map roughly in the middle of Nepal
+      const nepalCenter = { lat: 28.3949, lng: 84.1240 };
+
+      map = new google.maps.Map(document.getElementById("nepalMap"), {
+        center: nepalCenter,
+        zoom: 7,
+        mapTypeId: "terrain",   // terrain view (mountains etc.)
+        tilt: 45,
+      });
+
+      // Define some important places
+      const places = [
+        {
+          position: { lat: 27.9881, lng: 86.9250 },
+          title: "Mount Everest 🏔",
+          content: "Mount Everest is the tallest mountain on Earth! It is 8,849 meters high."
+        },
+        {
+          position: { lat: 27.7172, lng: 85.3240 },
+          title: "Kathmandu 🏙",
+          content: "Kathmandu is the capital city of Nepal. It is full of temples, culture, and history!"
+        },
+        {
+          position: { lat: 28.2096, lng: 83.9856 },
+          title: "Pokhara 🏞",
+          content: "Pokhara is famous for its beautiful lakes and views of the Annapurna mountains."
+        },
+        {
+          position: { lat: 27.5717, lng: 84.4970 },
+          title: "Chitwan National Park 🦏",
+          content: "Chitwan is a jungle area with rhinos, elephants, crocodiles, and many birds."
+        }
+      ];
+
+      const infoWindow = new google.maps.InfoWindow();
+
+      // Create markers for each place
+      places.forEach((place) => {
+        const marker = new google.maps.Marker({
+          position: place.position,
+          map,
+          title: place.title,
+          animation: google.maps.Animation.DROP,
+        });
+
+        marker.addListener("click", () => {
+          infoWindow.setContent(
+            "<div style='font-size:1.1rem;'><strong>" +
+            place.title +
+            "</strong><br>" +
+            place.content +
+            "</div>"
+          );
+          infoWindow.open(map, marker);
+          map.panTo(place.position);
+          map.setZoom(8);
+        });
+      });
+    }
+  </script>
+
+  <!-- LOAD GOOGLE MAPS JS (REPLACE YOUR_GOOGLE_MAPS_API_KEY) -->
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6il0-HhjzQN_oKfegWAkBFx5wFov5hrc">
+  </script>
+
+</body>
+</html>
