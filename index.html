@@ -2,76 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nepal For Kids 🗻❤️</title>
-
-  <!-- LOAD EXTERNAL KID-FRIENDLY CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nepal For Kids ❤️</title>
   <link rel="stylesheet" href="CSS/style.css">
-
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <a href="#">🏡 Namaste!</a>
-        <a href="pages/nepal-live-map.html">🗺 Magic Map</a>
-        <!-- <a href="pages/nepal-live-map.html">🌍 Live Map</a> -->
-        <a href="#">👋 Hello in Nepali</a>
-        <a href="#">🚩 Our Flag</a>
-        <a href="#">🎉 Dashain & Tihar</a>
-        <a href="#">🍜 Yummy Food</a>
-        <a href="#">🐘 Animals</a>
-        <a href="#">🌙 Good Night Story</a>
-        <a href="#">👨‍👩‍👧 Our Family</a>
-    </nav>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html">🏡 Namaste!</a>
+    <a href="pages/epal-live-map.html">🗺 Magic Map</a>
+    <a href="pages/hello-nepali.html">👋 Hello in Nepali</a>
+    <a href="pages/flag.html">🚩 Our Flag</a>
+    <a href="pages/dashain-tihar.html">🎉 Dashain & Tihar</a>
+    <a href="pages/food.html">🍜 Yummy Food</a>
+    <a href="pages/animals.html">🐘 Animals</a>
+    <a href="pages/story.html">🌙 Good Night Story</a>
+    <a href="pages/family.html">👨‍👩‍👧 Our Family</a>
+  </nav>
 
-    <!-- FLOATING EMOJIS -->
-    <div class="floating-emoji" style="top: 20%; left: 5%;">🎈</div>
-    <div class="floating-emoji" style="top: 65%; left: 80%;">🌈</div>
-    <div class="floating-emoji" style="top: 40%; left: 15%;">🦋</div>
+  <!-- FLOATING EMOJIS -->
+  <div class="floating-emoji" style="top: 12%; left: 7%;">🎈</div>
+  <div class="floating-emoji" style="top: 60%; left: 15%;">🦋</div>
+  <div class="floating-emoji" style="top: 70%; left: 80%;">🌈</div>
 
-    <!-- HERO SECTION -->
-<!-- HERO SECTION WITH REAL MOUNTAINS -->
-<!-- HERO SECTION WITH REAL MOUNTAINS -->
-<div class="hero-container">
-
-  <!-- Real mountains background -->
-  <div class="mountain-bg"></div>
-
-  <!-- Animated Baby Yak Mascot -->
-  <img src="images/heros/baby-yak.png" class="baby-yak" alt="Baby Yak Mascot">
-
-  <!-- Floating emojis -->
-  <div class="floating-emoji" style="top: 20%; left: 8%;">🎈</div>
-  <div class="floating-emoji" style="top: 55%; left: 15%;">🦋</div>
-  <div class="floating-emoji" style="top: 65%; left: 80%;">🌈</div>
-
-  <!-- HERO TEXT -->
-  <div class="hero-content">
+  <!-- HERO SECTION -->
+  <div class="hero">
     <h1>Namaste! 🙏</h1>
-    <p>
-      Welcome to Nepal — a colorful, beautiful country with tall mountains,
-      brave people, and super yummy momos!
-    </p>
+    <p>Welcome to Nepal — a colorful, beautiful country with tall mountains, brave people, and super yummy momos!</p>
 
-    <button class="button">Let's Explore Nepal Together! 🌏</button>
+    <div class="cta-row">
+      <a class="button" href="pages/magic-map.html">Let's Explore Nepal Together! 🌏</a>
 
-    <!-- Hear Namaste -->
-    <button class="sound-btn" onclick="playNamaste()">🔊 Hear “Namaste!”</button>
+      <!-- AUDIO BUTTON -->
+      <button id="play-namaste" class="audio-btn">🔊 Hear “Namaste!”</button>
+      <audio id="namaste-audio">
+        <source src="audio/namaste.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <!-- BABY YAK IMAGE -->
+    <img src="images/heros/baby-yak.png" class="baby-yak" alt="Cute Baby Yak">
   </div>
-</div>
 
-
-<!-- Audio -->
-<audio id="namasteAudio" src="audio/namaste.mp3"></audio>
-
-<script>
-  function playNamaste() {
-    document.getElementById("namasteAudio").play();
-  }
-</script>
-
+  <!-- AUDIO SCRIPT -->
+  <script>
+    document.getElementById("play-namaste").onclick = () => {
+      document.getElementById("namaste-audio").play();
+    };
+  </script>
 
 </body>
 </html>
