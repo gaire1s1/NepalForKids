@@ -137,3 +137,45 @@ nav a:hover {
     from { transform: translateY(20px); }
     to   { transform: translateY(-20px); }
 }
+
+
+/* RIGHT SIDE VERTICAL NAVIGATION */
+.side-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 230px;
+    background: rgba(10, 61, 98, 0.92); /* Deep nepali blue */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+
+.side-nav a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.side-nav a:hover {
+    background: #82ccdd;
+    color: #000;
+    transform: translateX(-6px) scale(1.05);
+}
+
+/* PUSH hero content left to avoid overlap */
+.hero {
+    margin-right: 240px; /* space for side menu */
+}
