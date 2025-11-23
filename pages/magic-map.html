@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magic Map of Nepal 🗺✨</title>
+
+<link rel="stylesheet" href="CSS/style.css">
+
+<style>
+
+/* Magic Map Container */
+.map-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.4);
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Nepal Map Image */
+.map {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.map:hover {
+  transform: scale(1.03);
+}
+
+/* Buttons for Clickable Regions */
+.region-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.region-btn {
+  background: #ffda79;
+  padding: 12px 22px;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.region-btn:hover {
+  background: #f6b93b;
+  transform: scale(1.1);
+}
+
+/* Fact Box */
+.fact-box {
+  margin-top: 30px;
+  background: rgba(255,255,255,0.85);
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5rem;
+  display: none;
+  animation: popUp 0.4s ease;
+}
+
+@keyframes popUp {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">🏡 Home</a>
+    <a href="#">🗺 Magic Map</a>
+    <a href="nepali-words.html">👋 Nepali Words</a>
+    <a href="#">🐘 Animals</a>
+    <a href="#">🍜 Yummy Food</a>
+    <a href="#">📚 Stories</a>
+</nav>
+
+<div class="hero">
+  <h1>Magic Map of Nepal 🗺✨</h1>
+  <p>Tap a place and learn something cool!</p>
+</div>
+
+<!-- Magic Map Container -->
+<div class="map-container">
+
+  <!-- Nepal map image -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Nepal_location_map.svg/1280px-Nepal_location_map.svg.png" 
+       class="map" alt="Nepal Map">
+
+  <!-- Clickable Region Buttons -->
+  <div class="region-buttons">
+      <div class="region-btn" onclick="showFact('everest')">🏔 Mount Everest</div>
+      <div class="region-btn" onclick="showFact('pokhara')">🏞 Pokhara</div>
+      <div class="region-btn" onclick="showFact('ktm')">🏙 Kathmandu</div>
+      <div class="region-btn" onclick="showFact('chitwan')">🦏 Chitwan</div>
+  </div>
+
+  <!-- Fact Output Box -->
+  <div id="factBox" class="fact-box"></div>
+
+</div>
+
+
+<script>
+function showFact(place) {
+    const factBox = document.getElementById('factBox');
+
+    const facts = {
+        everest: "🏔 Mount Everest is the tallest mountain on Earth! It stands at 8,849 meters. Located in Solukhumbu, Nepal.",
+        pokhara: "🏞 Pokhara is famous for beautiful lakes and the Annapurna mountains. Kids love boating here!",
+        ktm: "🏙 Kathmandu is the capital city of Nepal. Full of temples, culture, and yummy food!",
+        chitwan: "🦏 Chitwan is home to rhinos, tigers, elephants, and dense jungle adventures!"
+    };
+
+    factBox.innerHTML = facts[place];
+    factBox.style.display = "block";
+}
+</script>
+
+</body>
+</html>
